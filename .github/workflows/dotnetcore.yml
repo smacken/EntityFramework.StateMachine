@@ -19,7 +19,7 @@ jobs:
       with:
         token: ${{secrets.GITHUB_TOKEN}}  
     - name: Build with dotnet
-      run: dotnet build --configuration Release
+      run: dotnet build EntityFramework.StateMachine\EntityFramework.StateMachine.sln --configuration Release
     - name: Test
       run: dotnet test EntityFramework.StateMachine\EntityFramework.StateMachine.sln --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
     - name: Build NuGet package
